@@ -76,7 +76,7 @@ def main():
     print('\n')
     while True:
         print("Use these short codes: cc - create a new contact, dc - display contacts, "
-              "fc - find a contact, ex - exit the contact ")
+              "fc - find a contact,cp - copy email to clipboard,  del - delete a contact, ex - exit the contact ")
         short_code = input().lower()
         if short_code == 'cc':
             print("New Contact")
@@ -123,6 +123,30 @@ def main():
                 print(f"Email address.......{search_contact.email}")
             else:
                 print("That contact does not exist")
+
+        elif short_code == "cp":
+            print("Enter number to search for")
+            search_number = int(input())
+            if find_contact(search_number):
+                copy_email(search_number)
+                print("Email copied in clipboard")
+                print('-' * 20)
+            else:
+                print("Number not found")
+
+        elif short_code == "del":
+            print("Enter number of contact to delete")
+            search_number = int(input())
+            contact_found = find_contact(search_number)
+            if contact_found:
+                print("Are you sure you want delete this contact: Y or N")
+                response = input().lower()
+                if response == 'y':
+                    del_contact(contact_found)
+                    print("Contact deleted")
+            else:
+                print("Contact Not Found")
+
 
         elif short_code == "ex":
             print("Bye .......")
