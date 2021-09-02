@@ -70,7 +70,7 @@ def copy_email(number):
 
 def main():
     print("Hello welcome to your contact list, What is your name?")
-    user_name = str(input("Enter your name"))
+    user_name = str(input("Enter your name: "))
 
     print(f"Hello {user_name}. What would you like to do?")
     print('\n')
@@ -113,7 +113,7 @@ def main():
 
             print("Enter the number you want to search for")
 
-            search_number = input()
+            search_number = int(input())
             if check_existing_contacts(search_number):
                 search_contact = find_contact(search_number)
                 print(f"{search_contact.first_name} {search_contact.last_name}")
@@ -129,3 +129,7 @@ def main():
             break
         else:
             print("I really didn't get that. Please use the short codes")
+
+
+if __name__ == "__main__":
+    main()
