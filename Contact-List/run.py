@@ -10,7 +10,8 @@ def create_contact(fname, lname, email):
     :param email:
     :return: new_contact
     """
-    return new_contact()
+    new_contact = Contact(fname, lname, email)
+    return new_contact
 
 
 def del_contact(contact):
@@ -46,3 +47,12 @@ def display_contacts():
     :return: all contacts
     """
     return Contact.display_all_contacts()
+
+
+def copy_email(number):
+    """
+    Method to copy email to clipboard when user is found
+    :param number:
+    :return: email
+    """
+    return Contact.copy_email(number)
