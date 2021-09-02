@@ -10,3 +10,8 @@ for word in data.split():
         counter += 1
 print(f"\n Python occurs {counter} times ")
 handle.close()
+
+# Read file using a context manager.
+with open("test.txt", "r") as handle:
+    data = handle.read()
+    print(f"\n {data}")
